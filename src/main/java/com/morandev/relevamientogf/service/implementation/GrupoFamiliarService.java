@@ -41,6 +41,7 @@ public class GrupoFamiliarService implements IGrupoFamiliarService {
             gfEncontrado.get().setDescripcion(grupoFamiliar.getDescripcion());
             gfEncontrado.get().setBarrioId(grupoFamiliar.getBarrioId());
             gfEncontrado.get().setIntegrantes(grupoFamiliar.getIntegrantes());
+            gfEncontrado.get().setFechaAct(grupoFamiliar.getFechaAct());
             grupoFamiliarRepository.save(gfEncontrado.get());
         }
 

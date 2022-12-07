@@ -5,6 +5,7 @@ import com.morandev.relevamientogf.exception.ConflictException;
 import com.morandev.relevamientogf.exception.ResourceNotFoundException;
 import com.morandev.relevamientogf.model.GrupoFamiliar;
 import com.morandev.relevamientogf.service.IGrupoFamiliarService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,7 +38,7 @@ public class GrupoFamiliarController {
                         .toUri();
                 return ResponseEntity.created(uri).body(optGrupo.get());
             }
-            throw new Exception("Can not add a group!");
+            throw new Exception("No se puede crear el grupo!");
         }
         throw new ConflictException("Grupo familiar existente");
     }

@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.util.Collection;
 
 @Entity
@@ -24,6 +25,8 @@ public class GrupoFamiliar {
     private String descripcion;
     @Column(name = "gf_barrio_id")
     private int barrioId;
+    @Column(name = "gf_fecha_modificacion")
+    private LocalDate fechaAct;
     @OneToMany(mappedBy = "grupoFamiliar") //“grupoFamiliar” del lado de la clase Integrante establece la relación
     @JsonIgnore
     private Collection<Integrante> integrantes;
